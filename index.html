@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bypasser v8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>AI Bypasser // V8</header>
+
+<main>
+    <aside class="sidebar">
+        <div class="search-wrap">
+            <input type="text" id="searchEncoders" placeholder="SEARCH" oninput="filterEncoders()">
+        </div>
+        <nav id="encoderList">
+            <button class="tab-btn active" data-mode="hex">Hexadecimal</button>
+            <button class="tab-btn" data-mode="bin">Binary</button>
+            <button class="tab-btn" data-mode="b64">Base64</button>
+            <button class="tab-btn" data-mode="stretch">Text Stretch</button>
+            <button class="tab-btn" data-mode="morse">Morse Code</button>
+            <button class="tab-btn" data-mode="braille">Braille</button>
+            <button class="tab-btn" data-mode="nato">Nato Phonetic</button>
+            <button class="tab-btn" data-mode="leet">L33t Speak</button>
+            <button class="tab-btn" data-mode="spongebob">SpongeBob Case</button>
+            <button class="tab-btn" data-mode="rot13">Rot13</button>
+            <button class="tab-btn" data-mode="atbash">Atbash Cipher</button>
+            <button class="tab-btn" data-mode="caesar">Caesar Shift</button>
+            <button class="tab-btn" data-mode="ascii">ASCII Decimal</button>
+            <button class="tab-btn" data-mode="oct">Octal</button>
+            <button class="tab-btn" data-mode="url">URL Encoding</button>
+            <button class="tab-btn" data-mode="pig">Pig Latin</button>
+            <button class="tab-btn" data-mode="rev">Reverse</button>
+            <button class="tab-btn" data-mode="zalgo">Zalgo (Glitch)</button>
+            <button class="tab-btn" data-mode="vapor">Vaporwave</button>
+            <button class="tab-btn" data-mode="bubble">Bubble Text</button>
+            <button class="tab-btn" data-mode="upside">Upside Down</button>
+            <button class="tab-btn" data-mode="smallcaps">Small Caps</button>
+        </nav>
+
+        <div class="feedback-section">
+            <button class="feedback-btn" onclick="openModal('suggestion')">>> SUGGEST FEATURE</button>
+            <button class="feedback-btn" onclick="openModal('report')">>> REPORT ISSUE</button>
+        </div>
+    </aside>
+
+    <section class="workspace">
+        <div class="field-wrap">
+            <label>INPUT</label>
+            <textarea id="input" placeholder="Enter signal..." oninput="update()"></textarea>
+        </div>
+
+        <div class="field-wrap">
+            <label>
+                PROCESSED INPUT 
+                <div class="controls">
+                    <button class="action-btn" id="decodeToggle" onclick="toggleDecode()">Mode: Encode</button>
+                    <button class="action-btn" onclick="copyText()">COPY</button>
+                </div>
+            </label>
+            <div class="output-box" id="output">Nothing yet..</div>
+        </div>
+    </section>
+</main>
+
+<div id="feedbackModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">[CLOSE]</span>
+        <div id="modalTitle" style="margin-bottom: 15px; font-weight: bold;">// SEND SIGNAL</div>
+        <form action="https://formspree.io/f/xojnbqdg" method="POST">
+            <input type="hidden" name="_subject" id="formSubject" value="Feedback">
+            <input type="email" name="email" placeholder="Email (Optional)" style="width:100%; padding:8px; margin-bottom:10px; background:#000; color:#fff; border:1px solid var(--neon); outline: none;">
+            <textarea name="message" rows="5" placeholder="Details..." required style="width:100%; padding:8px; margin-bottom:10px; background:#000; color:#fff; border:1px solid var(--neon); outline: none; resize: none;"></textarea>
+            <button type="submit" style="width:100%; padding:10px; background:var(--neon); color:#000; border:none; font-weight:bold; cursor:pointer;">SEND TO UPLINK</button>
+        </form>
+    </div>
+</div>
+
+<a href="./LOCAL/AI Bypasser V7.1.1.zip" download="AI_Bypasser_V7.1.1.zip" class="local-dl">
+    [↓] DOWNLOAD LOCAL (.ZIP)
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
